@@ -1,0 +1,81 @@
+import { ChefHat, Building2, Briefcase, Shield } from "lucide-react"
+import { IoMdPlay } from "react-icons/io"
+
+
+export default function Features() {
+  const features = [
+    {
+      icon: ChefHat,
+      title: "Experienced Chefs",
+      description: "Browse Profiles Of Skilled Chefs With Proven Experience In Real Kitchens.",
+      iconColor: "text-orange-500",
+      bgColor: "bg-orange-50",
+    },
+    {
+      icon: Building2,
+      title: "Restaurant Matching",
+      description: "We Help Restaurants Find Chefs That Match Their Needs, Skills, And Style.",
+      iconColor: "text-amber-500",
+      bgColor: "bg-amber-50",
+    },
+    {
+      icon: Briefcase,
+      title: "Flexible Job Opportunities",
+      description: "Whether You're Hiring Full-Time Or Just For A Shift — Find Or Post Jobs Easily.",
+      iconColor: "text-blue-500",
+      bgColor: "bg-blue-50",
+    },
+    {
+      icon: Shield,
+      title: "Secure And Easy-To-Use",
+      description: "A Seamless Experience For Both Chefs And Restaurants, With Secure Logins And Smooth Communication.",
+      iconColor: "text-green-500",
+      bgColor: "bg-green-50",
+    },
+  ]
+
+  return (
+   <div>
+     <section className="py-16 px-4 bg-white relative">
+      {/* Feedback Button */}
+<div className="absolute top-4 right-4">
+  <button className="bg-[#679046] hover:bg-green-700 text-white px-4 py-2 md:py-3 rounded-md text-sm font-medium w-[100px] md:w-auto relative z-10">
+    Feedback!!!
+  </button>
+  <IoMdPlay
+    size={40}
+    className="text-[#679046] rotate-180 absolute top-4 md:top-6 right-4 z-0"
+  />
+</div>
+
+
+
+      <div className="max-w-7xl mx-auto">
+        {/* Section Title */}
+        <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">What Makes Us Different</h2>
+
+        {/* Features Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+          {features.map((feature, index) => (
+            <div
+              key={index}
+              className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow duration-300"
+            >
+              {/* Icon */}
+              <div className={`w-12 h-12 ${feature.bgColor} rounded-lg flex items-center justify-center mb-4`}>
+                <feature.icon className={`w-6 h-6 ${feature.iconColor}`} strokeWidth={2} />
+              </div>
+
+              {/* Title */}
+              <h3 className="text-lg font-semibold text-gray-900 mb-3">{feature.title}</h3>
+
+              {/* Description */}
+              <p className="text-sm text-gray-600 leading-relaxed">{feature.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+   </div>
+  )
+}
