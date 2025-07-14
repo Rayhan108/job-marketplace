@@ -18,7 +18,7 @@ export default function Navbar() {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
   const [langOpen, setLangOpen] = useState(false);
-  const [user, setUser] = useState(false);
+  const [userDropdownOpen, setUserDropdownOpen] = useState(false);
 
   const role = "user";
   const profileLink = role === "contractor" ? "/dashboard" : "/myProfile";
@@ -28,7 +28,7 @@ export default function Navbar() {
     avatar: userImg,
   };
 
-  const isLoggedIn = user;
+  const isLoggedIn = true; // set true to test user dropdown
 
   return (
     <div className="bg-white w-full px-4 py-2 border-b shadow-sm">
@@ -60,12 +60,15 @@ export default function Navbar() {
         </ul>
 
         {/* Right: User or Auth Links */}
-        <div className="hidden lg:flex items-center space-x-4">
+        <div className="hidden lg:flex items-center space-x-4 relative">
           {isLoggedIn ? (
             <>
-              {/* Profile */}
-              <Link href={profileLink}>
-                <div className="flex items-center space-x-2 cursor-pointer">
+              {/* User Avatar + Dropdown */}
+              <div className="relative">
+                <button
+                  onClick={() => setUserDropdownOpen(!userDropdownOpen)}
+                  className="flex items-center space-x-2 cursor-pointer"
+                >
                   <Image
                     src={userData.avatar}
                     alt="User Avatar"
@@ -73,19 +76,47 @@ export default function Navbar() {
                     height={32}
                     className="rounded-full"
                   />
-                  <div className="text-sm">
+                  <div className="text-sm text-left">
                     <p className="text-gray-600 font-medium">Hi!!!</p>
                     <p className="text-gray-800">{userData.name}</p>
                   </div>
-                </div>
-              </Link>
+                </button>
+
+                {userDropdownOpen && (
+                  <div className="absolute right-0 mt-2 w-40 bg-white border border-gray-200 rounded-md shadow-lg z-50">
+                    <Link
+                      href="/dashboard"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                      onClick={() => setUserDropdownOpen(false)}
+                    >
+                      Dashboard
+                    </Link>
+                    <Link
+                      href="/allJobs"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                      onClick={() => setUserDropdownOpen(false)}
+                    >
+                      All Jobs
+                    </Link>
+                    <button
+                      onClick={() => {
+                        // handle logout here
+                        setUserDropdownOpen(false);
+                      }}
+                      className="w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-red-50"
+                    >
+                      Logout
+                    </button>
+                  </div>
+                )}
+              </div>
 
               {/* Notifications */}
-              <Link href="/notificationPage">
+              <Link href="">
                 <div
                   className={`p-2 border border-gray-400 rounded-full hover:bg-gray-100 cursor-pointer ${pathname === "/notificationPage"
-                      ? "bg-orange-500 text-white"
-                      : ""
+                    ? "bg-orange-500 text-white"
+                    : ""
                     }`}
                 >
                   <IoNotificationsOutline size={20} />
@@ -119,7 +150,7 @@ export default function Navbar() {
                   <div className="absolute right-0 mt-2 w-32 bg-white border border-gray-200 rounded shadow z-50">
                     <button
                       onClick={() => {
-                        // language change logic for English
+                        // change to English
                         setLangOpen(false);
                       }}
                       className="block w-full px-4 py-2 text-left text-sm hover:bg-gray-100"
@@ -128,7 +159,7 @@ export default function Navbar() {
                     </button>
                     <button
                       onClick={() => {
-                        // language change logic for French
+                        // change to French
                         setLangOpen(false);
                       }}
                       className="block w-full px-4 py-2 text-left text-sm hover:bg-gray-100"
@@ -195,8 +226,8 @@ export default function Navbar() {
                     href={item.href}
                     onClick={() => setMenuOpen(false)}
                     className={`block py-2 ${pathname === item.href
-                        ? "text-orange-500 font-semibold"
-                        : ""
+                      ? "text-orange-500 font-semibold"
+                      : ""
                       }`}
                   >
                     {item.label}
@@ -206,48 +237,26 @@ export default function Navbar() {
               <li className="border-t pt-3">
                 {isLoggedIn ? (
                   <div className="flex flex-col space-y-3">
-                    <Link href={profileLink}>
-                      <div className="flex items-center space-x-2">
-                        <Image
-                          src={userData.avatar}
-                          alt="User"
-                          width={30}
-                          height={30}
-                          className="rounded-full"
-                        />
-                        <span className="font-medium">{userData.name}</span>
-                      </div>
-                    </Link>
-                    <Link href="/notificationPage">
-                      <span className="text-sm text-gray-700 flex items-center gap-2">
-                        <IoNotificationsOutline /> Notifications
-                      </span>
-                    </Link>
-                    <div className="border rounded px-4 py-2 w-fit">
-                      <button
-                        onClick={() => setLangOpen(!langOpen)}
-                        className="flex items-center gap-2 text-sm"
-                      >
-                        <FaGlobe size={14} />
-                        <span>Translate</span>
-                      </button>
-                      {langOpen && (
-                        <div className="mt-2 bg-white border border-gray-200 rounded shadow">
-                          <button
-                            onClick={() => setLangOpen(false)}
-                            className="block w-full px-4 py-2 text-left hover:bg-gray-100"
-                          >
-                            English
-                          </button>
-                          <button
-                            onClick={() => setLangOpen(false)}
-                            className="block w-full px-4 py-2 text-left hover:bg-gray-100"
-                          >
-                            Français
-                          </button>
-                        </div>
-                      )}
+                    <div className="flex items-center space-x-2">
+                      <Image
+                        src={userData.avatar}
+                        alt="User"
+                        width={30}
+                        height={30}
+                        className="rounded-full"
+                      />
+                      <span className="font-medium">{userData.name}</span>
                     </div>
+
+                    <Link href="/dashboard">
+                      <span className="text-sm text-gray-700">Dashboard</span>
+                    </Link>
+                    <Link href="/allJobs">
+                      <span className="text-sm text-gray-700">All Jobs</span>
+                    </Link>
+                    <button className="text-sm text-red-500 text-left">
+                      Logout
+                    </button>
                   </div>
                 ) : (
                   <div className="flex flex-col space-y-2">
