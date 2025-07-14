@@ -13,8 +13,10 @@ const MainLayout = ({
       <div>
         <div className="min-h-screen ">
           <Navbar />
+<div className="container mx-auto">
 
           {children}
+</div>
         </div>
         <div>
           <Footer/>
