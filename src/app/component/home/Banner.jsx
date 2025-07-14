@@ -5,8 +5,8 @@ import { MdArrowOutward } from 'react-icons/md';
 
 const Banner = () => {
     return (
-      <div className=" bg-[#E8EFE3] flex items-center justify-center px-4 py-16">
-      <div className="max-w-4xl mx-auto text-center">
+      <div className=" bg-[#E8EFE3] flex items-center justify-center px-4 py-16 font-poppins">
+      <div className="max-w-7xl mx-auto text-center">
         {/* Main Heading */}
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 mb-6 leading-tight">
           Connect Chefs with <span className="text-[#679046]">Restaurants</span>
