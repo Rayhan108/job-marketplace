@@ -1,6 +1,5 @@
 import { ChefHat, Building2, Briefcase, Shield } from "lucide-react"
 import Image from "next/image"
-import { IoMdPlay } from "react-icons/io"
 import icon1 from '../../../assets/hat-chef.png'
 import icon2 from '../../../assets/image 3.png'
 import icon3 from '../../../assets/image 4.png'
@@ -45,16 +44,7 @@ export default function Features() {
   return (
    <div>
      <section className="py-16 px-4 bg-white relative">
-      {/* Feedback Button */}
-<div className="absolute top-4 right-4">
-  <button className="bg-[#679046] hover:bg-green-700 text-white px-4 py-2 md:py-3 rounded-md text-sm font-medium w-[100px] md:w-auto relative z-10">
-    Feedback!!!
-  </button>
-  <IoMdPlay
-    size={40}              
-    className="text-[#679046] rotate-180 absolute top-4 md:top-6 right-4 z-0"
-  />
-</div>
+
 
 
 
