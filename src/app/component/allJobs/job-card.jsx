@@ -2,9 +2,11 @@
 
 import { MapPin, Briefcase, CalendarDays, Clock } from "lucide-react"
 import Image from "next/image"
+import Link from "next/link"
 
 export default function JobCard({ job }) {
   return (
+
     <div className="relative overflow-hidden border border-gray-200 rounded-lg bg-white p-6 shadow-sm">
       {job.isNew && (
         <span className="absolute right-4 top-4 bg-green-500 text-white text-xs font-medium px-2 py-1 rounded">
@@ -55,10 +57,14 @@ export default function JobCard({ job }) {
           <Clock className="mr-1 h-4 w-4" />
           <span>Deadline {job.deadlineDate}</span>
         </div>
-        <button className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-md text-sm font-medium">
+        <Link href={`/allJobs/${job?.id}`}>
+        
+        <button className="bg-orange-500  text-white px-6 py-2 rounded-md text-sm font-medium">
           Apply Now
         </button>
+        </Link>
       </div>
     </div>
+
   )
 }
