@@ -3,8 +3,8 @@
 import { Card, Progress, Button } from "antd"
 import { User, Pencil, Eye, Search, Lock, Users, Briefcase, Award } from "lucide-react"
 
-import DashboardCard from "@/app/component/dashboard/dashboard-card"
-import ApplicationCard from "@/app/component/dashboard/application-card"
+import DashboardCard from "@/app/component/dashboard/DashboardCard"
+import ApplicationCard from "@/app/component/dashboard/ApplicationCard"
 
 export const dashboardStats = [
   {
@@ -61,7 +61,7 @@ export const applications = [
 export default function DashboardPage() {
   return (
     <div className="min-h-screen bg-gray-100 p-6 font-poppins">
-      <div className="max-w-6xl mx-auto">
+      <div className="container mx-auto">
         <h1 className="text-3xl font-bold text-gray-800">Hello ahmed benjelloun.com!</h1>
         <p className="mt-2 text-gray-600">Manage your profile and track your applications</p>
 

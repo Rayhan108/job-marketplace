@@ -1,15 +1,15 @@
 "use client"
 
 import { MapPin, Briefcase, CalendarDays, Clock } from "lucide-react"
-import Image from "next/image"
+
 import Link from "next/link"
 
 export default function JobCard({ job }) {
   return (
 
-    <div className="relative overflow-hidden border border-gray-200 rounded-lg bg-white p-6 shadow-sm">
+    <div className="relative overflow-hidden border border-gray-200 rounded-lg bg-white p-6 shadow-sm font-poppins">
       {job.isNew && (
-        <span className="absolute right-4 top-4 bg-green-500 text-white text-xs font-medium px-2 py-1 rounded">
+        <span className="absolute right-4 top-1 sm:top-4 bg-green-500 text-white text-xs font-medium px-2 py-1 rounded">
           New
         </span>
       )}

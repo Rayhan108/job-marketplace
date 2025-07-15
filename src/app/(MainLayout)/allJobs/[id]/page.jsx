@@ -1,5 +1,5 @@
 'use client'
-import { CheckCircle, CalendarDays, MapPin, Briefcase, DollarSign } from 'lucide-react';
+import { CheckCircle, CalendarDays, MapPin, Briefcase, DollarSign, ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useState } from 'react';
@@ -7,7 +7,7 @@ import { useState } from 'react';
 
 
 export default function JobDetailsPage() {
-const [send,setSend]=useState(true)
+const [send,setSend]=useState(false)
     const job = {
   title: "Looking For A Chef Specializing In Moroccan Cuisine",
   company: "The King's Table",
@@ -46,9 +46,10 @@ const [send,setSend]=useState(true)
 };
   return (
     <div className="min-h-screen bg-gray-50 p-6 font-poppins">
-      <div className="max-w-6xl mx-auto">
-        <Link href="/allJobs" className="flex items-center text-gray-600 hover:text-gray-800 mb-6">
-          <span className="text-sm">&larr; Job Details</span>
+      <div className="container mx-auto">
+        <Link href="/allJobs" className="flex items-center  text-gray-600 hover:text-gray-800 mb-6">
+        <ArrowLeft className='w-3'/>
+          <span className="text-sm"> Job Details</span>
         </Link>
 
         {/* Job Header */}

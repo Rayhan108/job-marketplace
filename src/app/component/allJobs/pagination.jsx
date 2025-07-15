@@ -87,7 +87,7 @@ export default function Pagination({ currentPage, totalPages, onPageChange }) {
   }
 
   return (
-    <div className="flex items-right justify-end space-x-2 mt-8">
+    <div className="flex items-right justify-end space-x-2 mt-8 font-poppins">
       <button
         onClick={() => onPageChange(currentPage - 1)}
         disabled={currentPage === 1}

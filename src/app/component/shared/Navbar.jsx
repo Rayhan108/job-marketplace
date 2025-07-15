@@ -11,7 +11,7 @@ import { FaGlobe } from "react-icons/fa";
 
 const navItems = [
   { label: "Find Profiles", href: "/findProfile" },
-  { label: "Job Offers", href: "/jobOffers" },
+  { label: "Job Offers", href: "/allJobs" },
 ];
 
 export default function Navbar() {

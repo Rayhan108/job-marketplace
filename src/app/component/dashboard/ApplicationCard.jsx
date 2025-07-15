@@ -4,7 +4,7 @@ import { Clock } from "lucide-react"
 
 export default function ApplicationCard({ title, company, appliedDate }) {
   return (
-    <div className="border border-gray-200 rounded-lg p-4 mb-4 bg-white">
+    <div className="border border-gray-200 rounded-lg p-4 mb-4 bg-white font-poppins">
       <div className="flex justify-between items-start">
         <div>
           <h3 className="font-semibold text-base text-gray-800">{title}</h3>
