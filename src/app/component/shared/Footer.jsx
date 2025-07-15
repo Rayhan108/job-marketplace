@@ -31,27 +31,27 @@ const Footer = () => {
             <h3 className="text-white font-semibold text-lg mb-6">Quick Links</h3>
             <ul className="space-y-4">
               <li>
-                <a href="#" className="text-gray-300 hover:text-white transition-colors text-sm">
+                <a href="/" className="text-gray-300 hover:text-white transition-colors text-sm">
                   Home
                 </a>
               </li>
               <li>
-                <a href="#" className="text-gray-300 hover:text-white transition-colors text-sm">
+                <a href="/aboutUs" className="text-gray-300 hover:text-white transition-colors text-sm">
                   About Us
                 </a>
               </li>
               <li>
-                <a href="#" className="text-gray-300 hover:text-white transition-colors text-sm">
+                <a href="/contactUs" className="text-gray-300 hover:text-white transition-colors text-sm">
                   Contact Us
                 </a>
               </li>
               <li>
-                <a href="#" className="text-gray-300 hover:text-white transition-colors text-sm">
+                <a href="/privacyPolicy" className="text-gray-300 hover:text-white transition-colors text-sm">
                   Privacy Policy
                 </a>
               </li>
               <li>
-                <a href="#" className="text-gray-300 hover:text-white transition-colors text-sm">
+                <a href="/terms" className="text-gray-300 hover:text-white transition-colors text-sm">
                   Terms & Conditions
                 </a>
               </li>
@@ -73,9 +73,9 @@ const Footer = () => {
               </div>
               <div className="flex items-center gap-3">
                 <MdPhone className="text-gray-400 text-lg" />
-                <a href="tel:+212522XXXXXX" className="text-gray-300 hover:text-white transition-colors text-sm">
+                <p  className="text-gray-300 hover:text-white transition-colors text-sm">
                   +212 5 22 XX XX XX
-                </a>
+                </p>
               </div>
             </div>
 
