@@ -1,7 +1,7 @@
 "use client"
 
 import { Card, Progress, Button } from "antd"
-import { User, Pencil, Eye, Search, Lock, CheckCircle, Users, Briefcase, Award } from "lucide-react"
+import { User, Pencil, Eye, Search, Lock, Users, Briefcase, Award } from "lucide-react"
 
 import DashboardCard from "@/app/component/dashboard/dashboard-card"
 import ApplicationCard from "@/app/component/dashboard/application-card"
