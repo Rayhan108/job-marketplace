@@ -10,7 +10,7 @@ import { IoNotificationsOutline } from "react-icons/io5";
 import { FaGlobe } from "react-icons/fa";
 
 const navItems = [
-  { label: "Find Profiles", href: "/findProfile" },
+  { label: "Find Profiles", href: "/jobProfile" },
   { label: "Job Offers", href: "/allJobs" },
 ];
 
