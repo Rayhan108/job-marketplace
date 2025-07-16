@@ -5,6 +5,7 @@ import { useForm } from 'react-hook-form';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import { FcGoogle } from 'react-icons/fc';
 import ReCAPTCHA from 'react-google-recaptcha';
+import { useRouter } from 'next/navigation';
 
 const SITE_KEY = 'YOUR_SITE_KEY_HERE'; // 🔁 Replace with your real site key
 
@@ -13,14 +14,15 @@ const SignUpForm = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirm, setShowConfirm] = useState(false);
   const [captchaToken, setCaptchaToken] = useState(null);
-
+const router = useRouter();
   const onSubmit = (data) => {
-    if (!captchaToken) {
-      alert('Please complete the reCAPTCHA');
-      return;
-    }
+    // if (!captchaToken) {
+    //   alert('Please complete the reCAPTCHA');
+    //   return;
+    // }
     console.log('Form Data:', data);
-    console.log('Captcha Token:', captchaToken);
+      router.push('/signIn')
+    // console.log('Captcha Token:', captchaToken);
     // Add signup submission logic here (e.g. send to API)
   };
 

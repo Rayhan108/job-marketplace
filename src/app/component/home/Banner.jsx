@@ -70,7 +70,7 @@ const Banner = () => {
             </div>
           </Link>
 
-          <Link href="/register/employer">
+          <Link href="/resturentProfileForm">
             <div className="border rounded-lg p-4 flex items-center justify-between cursor-pointer hover:shadow-md transition">
               <div className="flex items-center gap-3">
                 <span className='bg-[#D9F9E6] p-2 rounded-md'>             <LucideBuilding2 className="text-[#679046] text-2xl" /></span>
