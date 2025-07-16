@@ -5,6 +5,7 @@ import { User, Pencil, Eye, Search, Lock, Users, Briefcase, Award } from "lucide
 
 import DashboardCard from "@/app/component/dashboard/DashboardCard"
 import ApplicationCard from "@/app/component/dashboard/ApplicationCard"
+import Link from "next/link"
 
 export const dashboardStats = [
   {
@@ -88,23 +89,33 @@ export default function DashboardPage() {
                 <span>Verified Profile</span>
               </div>
               <div className="mt-6 space-y-3">
-                <Button block icon={<Pencil className="h-4 w-4" />} className="text-left">
+                   <Link href={'/editProfile'}>
+                <Button block icon={<Pencil className="h-4 w-4 my-3" />} className="text-left">
                   Edit my profiles
                 </Button>
+                   </Link>
+                <Link href={'/jobProfile/1'}>
+                
                 <Button block icon={<Eye className="h-4 w-4" />} className="text-left">
                   View my public profile
                 </Button>
+                </Link>
               </div>
             </Card>
 
             <Card title={<span className="flex items-center space-x-2"><User className="h-5 w-5 text-gray-700" /><span>Quick Actions</span></span>} bordered>
               <div className="space-y-3">
-                <Button block icon={<Eye className="h-4 w-4" />} className="text-left">
+                   <Link href={'/jobProfile'}>
+                   
+                <Button block icon={<Eye className="h-4 w-4 my-3" />} className="text-left">
                   View profiles
                 </Button>
+                   </Link>
+                      <Link href={'/allJobs'}>
                 <Button block icon={<Search className="h-4 w-4" />} className="text-left">
                   Search for offers
                 </Button>
+                      </Link>
               </div>
             </Card>
           </div>
@@ -118,9 +129,12 @@ export default function DashboardPage() {
                 </div>
               }
               extra={
+                   <Link href={'/allJobs'}>
+
                 <Button className="text-gray-600 hover:text-gray-800 text-sm">
                   See all offers
                 </Button>
+                   </Link>
               }
               bordered
             >
