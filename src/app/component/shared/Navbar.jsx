@@ -8,6 +8,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { IoNotificationsOutline } from "react-icons/io5";
 import { FaGlobe } from "react-icons/fa";
+import { MdOutlineTranslate } from "react-icons/md";
 
 const navItems = [
   { label: "Find Profiles", href: "/jobProfile" },
@@ -127,9 +128,10 @@ export default function Navbar() {
               <div className="relative">
                 <button
                   onClick={() => setLangOpen(!langOpen)}
-                  className="flex items-center space-x-1 border border-gray-300 px-6 py-2 rounded-xl text-sm text-gray-700 hover:bg-gray-100"
+                  className="flex items-center space-x-1 border border-gray-300 px-6 py-2 rounded-xl text-sm text-black hover:bg-gray-100"
                 >
-                  <FaGlobe size={14} />
+        
+                  <MdOutlineTranslate size={14}  />
                   <span>Translate</span>
                   <svg
                     className="w-3 h-3 ml-1"

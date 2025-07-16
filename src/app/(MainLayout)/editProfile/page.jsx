@@ -89,7 +89,7 @@ export default function EditProfileForm() {
   ]
 
   return (
-    <div className="min-h-screen bg-gray-100 flex items-center justify-center p-4 sm:p-6 lg:p-8">
+    <div className="min-h-screen bg-gray-100 flex items-center justify-center p-4 sm:p-6 lg:p-8 font-poppins">
       <div className="bg-white border border-[#B5B5B5] rounded-lg shadow-lg p-6 sm:p-8 lg:p-10 max-w-4xl w-full">
         {/* Header */}
         <div className="flex flex-col items-center mb-8">
