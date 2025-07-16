@@ -16,7 +16,7 @@ const LoginForm = () => {
 
   const onSubmit = data => {
     console.log(data);
-    router.push('/dashboard')
+    router.push('/createProfile')
   };
 
   return (

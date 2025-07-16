@@ -174,12 +174,12 @@ export default function Navbar() {
             </>
           ) : (
             <>
-              <Link href="/signup">
+              <Link href="/signUp">
                 <button className="bg-orange-500 text-white px-5 py-2 rounded hover:bg-orange-600 text-sm">
                   Sign Up
                 </button>
               </Link>
-              <Link href="/login">
+              <Link href="/signIn">
                 <button className="border border-orange-500 text-orange-500 px-5 py-2 rounded hover:bg-orange-50 text-sm">
                   Login
                 </button>

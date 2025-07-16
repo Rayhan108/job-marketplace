@@ -14,7 +14,7 @@ const RestaurantProfileForm = () => {
     <div className="min-h-screen flex justify-center items-center bg-white px-4">
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="w-full max-w-md bg-white border border-gray-200 rounded-lg p-6 shadow"
+        className="w-full max-w-xl bg-white border border-gray-200 rounded-lg p-6 shadow"
       >
         {/* Icon + Heading */}
         <div className="text-center mb-6">
