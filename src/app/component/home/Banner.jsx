@@ -44,7 +44,7 @@ const Banner = () => {
       {/* Ant Design Modal */}
       <Modal
         title={<div className="text-center flex flex-col justify-center items-center font-bold text-xl">
-          <ChefHat size={24} className='w-12 text-[#E87B35] '/>
+          <ChefHat size={24} className='w-12 text-[#E87B35] ' />
           <h1 className='text-center font-bold text-xl'>Join CookConnekt</h1>
         </div>}
         open={isModalOpen}
@@ -54,12 +54,12 @@ const Banner = () => {
       >
         <p className="text-center text-gray-500 mb-6">Choose your account type to get started</p>
         <div className="flex flex-col gap-4">
-          <Link href="/register/cook">
+          <Link href="/signIn">
             <div className="border rounded-lg p-4 flex items-center justify-between cursor-pointer hover:shadow-md transition">
               <div className="flex items-center gap-3">
                 <span className='bg-[#F0F4EC] p-2 rounded-md'>
 
-                <ChefHat className="text-[#679046] text-2xl" />
+                  <ChefHat className="text-[#679046] text-2xl" />
                 </span>
                 <div>
                   <p className="font-semibold">I am a cook</p>
@@ -73,7 +73,7 @@ const Banner = () => {
           <Link href="/register/employer">
             <div className="border rounded-lg p-4 flex items-center justify-between cursor-pointer hover:shadow-md transition">
               <div className="flex items-center gap-3">
-   <span className='bg-[#D9F9E6] p-2 rounded-md'>             <LucideBuilding2 className="text-[#679046] text-2xl" /></span>
+                <span className='bg-[#D9F9E6] p-2 rounded-md'>             <LucideBuilding2 className="text-[#679046] text-2xl" /></span>
                 <div>
                   <p className="font-semibold">I am Restaurant/Employer</p>
                   <p className="text-gray-500 text-sm">Find culinary talent and post your offers</p>
