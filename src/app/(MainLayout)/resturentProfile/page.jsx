@@ -87,44 +87,49 @@ export default function ProfilePage() {
               Restaurant Information
             </h3>
             <div className="space-y-2 text-gray-700">
-              <div className="flex">
+              <div className="flex gap-3">
                 <span className="font-medium w-28">City:</span>
                 <span>Kansas City, KS</span>
               </div>
-              <div className="flex">
+              <div className="flex gap-3">
                 <span className="font-medium w-28">Address:</span>
                 <span>Suite 756 031 Ines Riverway</span>
               </div>
-              <div className="flex">
-                <span className="font-medium w-28">Email:</span>
+              <div className="flex gap-3">
+                <span className="font-medium w-28">Business Email:</span>
                 <span>Willie.Jennings@Example.Com</span>
               </div>
-              <div className="flex">
-                <span className="font-medium w-28">Phone:</span>
+              <div className="flex gap-3">
+                <span className="font-medium w-28">Phone Number:</span>
                 <span>(+33)7 45 55 87 71</span>
               </div>
-              <div className="flex">
-                <span className="font-medium w-28">Type:</span>
+              <div className="flex gap-3">
+                <span className="font-medium w-28">Busineses Type:</span>
                 <span>Casablanca</span>
               </div>
             </div>
           </div>
 
           {/* Contact Box */}
-          <div className="bg-white rounded-lg shadow-sm p-4 flex flex-col items-center text-center">
-            <Phone className="w-8 h-8 text-gray-400 mb-3" />
+          <div className="bg-white rounded-lg shadow-sm p-4 ">
+              <h3 className="text-green-600 font-semibold mb-3 text-start">
+             Contact
+            </h3>
+      <div className="flex flex-col items-center text-center">
+              <Phone className="w-8 h-8 text-gray-400 mb-3" />
             <p className="text-sm text-gray-600 mb-3">
               Contact info reserved for restaurants
             </p>
             <button className="bg-orange-500 text-white text-sm px-4 py-2 rounded-md hover:bg-orange-600 transition">
               Access contacts
             </button>
+      </div>
           </div>
 
           {/* Statistics */}
           <div className="bg-white rounded-lg shadow-sm p-4 text-sm">
             <h3 className="text-green-600 font-semibold mb-3">
-              Statistics
+              Statistics Section
             </h3>
             <div className="space-y-2 text-gray-700">
               <div className="flex">
@@ -143,40 +148,46 @@ export default function ProfilePage() {
           </div>
         </div>
 
-        {/* Recent Jobs */}
-        <div className="bg-white rounded-lg shadow-sm p-4 mt-8">
-          <div className="flex items-center mb-4">
-            <Briefcase className="w-5 h-5 text-gray-700 mr-2" />
-            <h3 className="text-base font-semibold text-gray-800">
-              My Recent Published Jobs
-            </h3>
-          </div>
+{/* Recent Jobs */}
+<div className="bg-white rounded-lg shadow-sm p-4 mt-8">
+  <div className="flex items-center mb-4">
+    <Briefcase className="w-5 h-5 text-gray-700 mr-2" />
+    <h3 className="text-base font-semibold text-gray-800">
+      My Recent Published Jobs
+    </h3>
+  </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {[...Array(4)].map((_, i) => (
-              <div
-                key={i}
-                className="border border-gray-200 rounded-lg p-4 flex flex-col justify-between"
-              >
-                <div>
-                  <p className="font-medium text-gray-800 text-sm">
-                    Chef specializing in Moroccan cuisine
-                  </p>
-                  <p className="text-xs text-gray-500 mt-1">The King&apos;s Table</p>
-                  <span className="inline-block bg-orange-200 text-orange-800 text-xs font-medium px-2.5 py-0.5 rounded-full mt-2">
-                    Total Applied 02
-                  </span>
-                  <p className="text-xs text-gray-500 mt-1">
-                    Deadline : 06-28-205
-                  </p>
-                </div>
-                <button className="mt-3 self-end text-sm bg-blue-100 text-blue-600 px-4 py-1.5 rounded-md hover:bg-blue-200 transition">
-                  View
-                </button>
-              </div>
-            ))}
-          </div>
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+    {[...Array(4)].map((_, i) => (
+      <div
+        key={i}
+        className="border border-gray-200 rounded-lg p-4 bg-white shadow-sm"
+      >
+        {/* Top: Title + View */}
+        <div className="flex justify-between items-start mb-2">
+          <p className="text-sm font-semibold text-gray-800">
+            Chef specializing in Moroccan cuisine
+          </p>
+          <button className="bg-blue-100 text-blue-600 text-sm px-4 py-1 rounded-full font-medium hover:bg-blue-200 transition">
+            View
+          </button>
         </div>
+
+        {/* Company */}
+        <p className="text-sm text-gray-500">The King&apos;s Table</p>
+
+        {/* Applied Count */}
+        <p className="text-sm text-gray-600 mt-1">Total Applied 02</p>
+
+        {/* Deadline */}
+        <p className="text-sm text-orange-500 font-medium mt-1">
+          Deadline : 06-28-205
+        </p>
+      </div>
+    ))}
+  </div>
+</div>
+
       </div>
     </div>
   );

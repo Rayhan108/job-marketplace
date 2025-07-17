@@ -1,6 +1,8 @@
 'use client';
 
+import { ArrowLeft } from 'lucide-react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { useForm } from 'react-hook-form';
 import { FaRegUser } from 'react-icons/fa';
 
@@ -25,7 +27,14 @@ export default function BusinessProfileForm() {
   };
 
   return (
-<div>
+<div className='w-full max-w-5xl mt-3 mx-auto'>
+            {/* Top Back Nav */}
+        <Link href={'/resturentProfile'}>
+        <div className="flex items-center mb-4">
+          <ArrowLeft className="w-5 h-5 text-gray-600 mr-2" />
+          <span className="text-sm text-gray-600 font-medium">Profile</span>
+        </div>
+        </Link>
                 {/* Header */}
             <div className="flex flex-col items-center mb-8">
               <div className="w-16 h-16 rounded-full border-2 border-[#2047B8] overflow-hidden flex items-center justify-center mb-4">
