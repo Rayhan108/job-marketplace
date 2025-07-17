@@ -3,6 +3,7 @@
 import { useForm } from "react-hook-form";
 import Image from "next/image";
 import { useEffect, useState, useRef } from "react";
+import { useRouter } from "next/navigation";
 
 export default function CreateProfilePage() {
   const {
@@ -47,7 +48,7 @@ export default function CreateProfilePage() {
       setProfilePreview(null);
     }
   }, [profilePictureFile]);
-
+const router = useRouter()
   const onSubmit = (data) => {
     console.log("Form Data:", data);
     if (data.dishPhotos && data.dishPhotos.length > 0) {
@@ -57,6 +58,7 @@ export default function CreateProfilePage() {
       setSubmittedPhotos(postedImages);
       setDishPreviews([]);
     }
+    router.push('/dashboard')
   };
 
   const yearsOfExperienceOptions = ["2 years", "3 years", "4 years", "5+ years", "10+ years"];
@@ -75,75 +77,120 @@ export default function CreateProfilePage() {
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
           {/* Profile Info */}
           <h2 className="text-lg font-semibold text-gray-800 border-b pb-2 mb-4">Profile Information</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {/* Full Name */}
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Full Name *</label>
-              <input {...register("fullName", { required: "Full name is required" })} placeholder="Your name" className="input" />
-              {errors.fullName && <p className="text-red-500 text-sm">{errors.fullName.message}</p>}
-            </div>
-
-            {/* Years of Experience */}
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Years of Experience *</label>
-              <select {...register("yearsOfExperience", { required: true })} className="input bg-white">
-                <option value="">Select</option>
-                {yearsOfExperienceOptions.map((item) => (
-                  <option key={item}>{item}</option>
-                ))}
-              </select>
-              {errors.yearsOfExperience && <p className="text-red-500 text-sm">Required</p>}
-            </div>
-
-            {/* Phone Number */}
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Phone Number *</label>
-              <input type="tel" {...register("phoneNumber", { required: true })} placeholder="+123 456 7890" className="input" />
-              {errors.phoneNumber && <p className="text-red-500 text-sm">Required</p>}
-            </div>
-
-            {/* City */}
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">City *</label>
-              <select {...register("city", { required: true })} className="input bg-white">
-                {cityOptions.map((city) => (
-                  <option key={city}>{city}</option>
-                ))}
-              </select>
-            </div>
-
-            {/* Previous Experience */}
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Previous Experience *</label>
-              <select {...register("previousExperience", { required: true })} className="input bg-white">
-                <option value="">Select</option>
-                {yearsOfExperienceOptions.map((item) => (
-                  <option key={item}>{item}</option>
-                ))}
-              </select>
-            </div>
-
-            {/* Current Position */}
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Current Position *</label>
-              <select {...register("currentPosition", { required: true })} className="input bg-white">
-                {currentPositionOptions.map((position) => (
-                  <option key={position}>{position}</option>
-                ))}
-              </select>
-            </div>
-
-            {/* Experience Level */}
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Experience Level *</label>
-              <select {...register("experienceLevel", { required: true })} className="input bg-white">
-                {experienceLevelOptions.map((level) => (
-                  <option key={level}>{level}</option>
-                ))}
-              </select>
-            </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {/* Full Name */}
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1">
+              Full name<span className="text-red-500">*</span>
+            </label>
+            <input
+              {...register("fullName", { required: "Full name is required" })}
+              type="text"
+              className="w-full border border-gray-300 rounded-md px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-orange-400"
+            />
+            {errors.fullName && (
+              <p className="text-red-500 text-sm mt-1">{errors.fullName.message}</p>
+            )}
           </div>
 
+          {/* Years of Experience */}
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1">
+              Years of experience<span className="text-red-500">*</span>
+            </label>
+            <select
+              {...register("yearsOfExperience", { required: "Required" })}
+              className="w-full border border-gray-300 rounded-md px-4 py-2 text-sm bg-white"
+            >
+              <option value="">Select</option>
+              {yearsOfExperienceOptions.map((year) => (
+                <option key={year} value={year}>
+                  {year}
+                </option>
+              ))}
+            </select>
+            {errors.yearsOfExperience && (
+              <p className="text-red-500 text-sm mt-1">{errors.yearsOfExperience.message}</p>
+            )}
+          </div>
+
+          {/* Phone Number */}
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1">
+              Phone number<span className="text-red-500">*</span>
+            </label>
+            <input
+              {...register("phoneNumber", { required: "Phone number is required" })}
+              type="tel"
+              className="w-full border border-gray-300 rounded-md px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-orange-400"
+            />
+            {errors.phoneNumber && (
+              <p className="text-red-500 text-sm mt-1">{errors.phoneNumber.message}</p>
+            )}
+          </div>
+
+          {/* City */}
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1">
+              City<span className="text-red-500">*</span>
+            </label>
+            <select
+              {...register("city", { required: "City is required" })}
+              className="w-full border border-gray-300 rounded-md px-4 py-2 text-sm bg-white"
+            >
+              {cityOptions.map((city) => (
+                <option key={city} value={city === "Select your city" ? "" : city}>
+                  {city}
+                </option>
+              ))}
+            </select>
+            {errors.city && (
+              <p className="text-red-500 text-sm mt-1">{errors.city.message}</p>
+            )}
+          </div>
+
+          {/* Current Position */}
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1">
+              Current Position<span className="text-red-500">*</span>
+            </label>
+            <select
+              {...register("currentPosition", { required: "Required" })}
+              className="w-full border border-gray-300 rounded-md px-4 py-2 text-sm bg-white"
+            >
+              {currentPositionOptions.map((pos) => (
+                <option key={pos} value={pos}>
+                  {pos}
+                </option>
+              ))}
+            </select>
+            {errors.currentPosition && (
+              <p className="text-red-500 text-sm mt-1">{errors.currentPosition.message}</p>
+            )}
+          </div>
+
+          {/* Experience Level */}
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1">
+              Experience Level<span className="text-red-500">*</span>
+            </label>
+            <select
+              {...register("experienceLevel", { required: "Required" })}
+              className="w-full border border-gray-300 rounded-md px-4 py-2 text-sm bg-white"
+            >
+              {experienceLevelOptions.map((level) => (
+                <option key={level} value={level}>
+                  {level}
+                </option>
+              ))}
+            </select>
+            {errors.experienceLevel && (
+              <p className="text-red-500 text-sm mt-1">{errors.experienceLevel.message}</p>
+            )}
+          </div>
+        </div>
+
+  
           {/* Culinary Specialties */}
           <h2 className="text-lg font-semibold text-gray-800 border-b pb-2 mt-8">Culinary Specialties</h2>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
