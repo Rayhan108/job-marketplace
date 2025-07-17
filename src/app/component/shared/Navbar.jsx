@@ -7,13 +7,7 @@ import userImg from "../../../assets/Group.png";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { IoNotificationsOutline } from "react-icons/io5";
-import { FaGlobe } from "react-icons/fa";
 import { MdOutlineTranslate } from "react-icons/md";
-
-const navItems = [
-  { label: "Find Profiles", href: "/jobProfile" },
-  { label: "Job Offers", href: "/allJobs" },
-];
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -21,20 +15,36 @@ export default function Navbar() {
   const [langOpen, setLangOpen] = useState(false);
   const [userDropdownOpen, setUserDropdownOpen] = useState(false);
 
-  const role = "user";
-  const profileLink = role === "contractor" ? "/dashboard" : "/myProfile";
+  const role = "owner"; // Change this to "user" or "owner" to test
+
+  const isLoggedIn = true; // Toggle to test login/logout
+  const profileLink = role === "owner" ? "/resturentDashboard" : "/dashboard";
+  const jobsLabel = role === "owner" ? "All Cooks" : "All Jobs";
+  const jobsLink = role === "owner" ? "/allCooks" : "/allJobs";
+
+  const navItems = [
+    { label: "Find Profiles", href: "/jobProfile" },
+    { label: "Job Offers", href: "/allJobs" },
+    ...(role === "owner"
+     ?  [{ label: "Post an Offer", href: "/postOffer" },] :""
+   
+  )];
 
   const userData = {
     name: "Giring Furqon",
     avatar: userImg,
   };
 
-  const isLoggedIn = true; // set true to test user dropdown
+  const handleLogout = () => {
+    console.log("Logged out");
+    // Add logout logic here (clear token, redirect, etc.)
+    setUserDropdownOpen(false);
+  };
 
   return (
     <div className="bg-white w-full px-4 py-2 border-b shadow-sm">
       <nav className="container mx-auto flex justify-between items-center relative">
-        {/* Left: Logo */}
+        {/* Logo */}
         <Link href="/">
           <div className="flex items-center space-x-2">
             <Image src={logo} alt="Logo" width={46} height={46} />
@@ -42,29 +52,27 @@ export default function Navbar() {
           </div>
         </Link>
 
-        {/* Center: Nav Links */}
+        {/* Nav Links */}
         <ul className="hidden lg:flex space-x-6 text-sm font-medium text-gray-700">
-          {navItems.map((item) => {
-            const isActive = pathname === item.href;
-            return (
-              <li key={item.href}>
-                <Link
-                  href={item.href}
-                  className={`font-poppins text-xl ${isActive ? "text-orange-600" : ""
-                    }`}
-                >
-                  {item.label}
-                </Link>
-              </li>
-            );
-          })}
+          {navItems.map((item) => (
+            <li key={item.href}>
+              <Link
+                href={item.href}
+                className={`font-poppins text-xl ${
+                  pathname === item.href ? "text-orange-600" : ""
+                }`}
+              >
+                {item.label}
+              </Link>
+            </li>
+          ))}
         </ul>
 
-        {/* Right: User or Auth Links */}
+        {/* User Section */}
         <div className="hidden lg:flex items-center space-x-4 relative">
           {isLoggedIn ? (
             <>
-              {/* User Avatar + Dropdown */}
+              {/* Avatar + Dropdown */}
               <div className="relative">
                 <button
                   onClick={() => setUserDropdownOpen(!userDropdownOpen)}
@@ -72,7 +80,7 @@ export default function Navbar() {
                 >
                   <Image
                     src={userData.avatar}
-                    alt="User Avatar"
+                    alt="User"
                     width={32}
                     height={32}
                     className="rounded-full"
@@ -86,24 +94,23 @@ export default function Navbar() {
                 {userDropdownOpen && (
                   <div className="absolute right-0 mt-2 w-40 bg-white border border-gray-200 rounded-md shadow-lg z-50">
                     <Link
-                      href="/dashboard"
+                      href={profileLink}
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                       onClick={() => setUserDropdownOpen(false)}
                     >
                       Dashboard
                     </Link>
+
                     <Link
-                      href="/allJobs"
+                      href={jobsLink}
                       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                       onClick={() => setUserDropdownOpen(false)}
                     >
-                      All Jobs
+                      {jobsLabel}
                     </Link>
+
                     <button
-                      onClick={() => {
-                        // handle logout here
-                        setUserDropdownOpen(false);
-                      }}
+                      onClick={handleLogout}
                       className="w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-red-50"
                     >
                       Logout
@@ -112,26 +119,26 @@ export default function Navbar() {
                 )}
               </div>
 
-              {/* Notifications */}
-              <Link href="">
+              {/* Notification Icon */}
+              <Link href="/notificationPage">
                 <div
-                  className={`p-2 border border-gray-400 rounded-full hover:bg-gray-100 cursor-pointer ${pathname === "/notificationPage"
-                    ? "bg-orange-500 text-white"
-                    : ""
-                    }`}
+                  className={`p-2 border border-gray-400 rounded-full hover:bg-gray-100 cursor-pointer ${
+                    pathname === "/notificationPage"
+                      ? "bg-orange-500 text-white"
+                      : ""
+                  }`}
                 >
                   <IoNotificationsOutline size={20} />
                 </div>
               </Link>
 
-              {/* Translate */}
+              {/* Language Selector */}
               <div className="relative">
                 <button
                   onClick={() => setLangOpen(!langOpen)}
                   className="flex items-center space-x-1 border border-gray-300 px-6 py-2 rounded-xl text-sm text-black hover:bg-gray-100"
                 >
-        
-                  <MdOutlineTranslate size={14}  />
+                  <MdOutlineTranslate size={14} />
                   <span>Translate</span>
                   <svg
                     className="w-3 h-3 ml-1"
@@ -151,19 +158,13 @@ export default function Navbar() {
                 {langOpen && (
                   <div className="absolute right-0 mt-2 w-32 bg-white border border-gray-200 rounded shadow z-50">
                     <button
-                      onClick={() => {
-                        // change to English
-                        setLangOpen(false);
-                      }}
+                      onClick={() => setLangOpen(false)}
                       className="block w-full px-4 py-2 text-left text-sm hover:bg-gray-100"
                     >
                       English
                     </button>
                     <button
-                      onClick={() => {
-                        // change to French
-                        setLangOpen(false);
-                      }}
+                      onClick={() => setLangOpen(false)}
                       className="block w-full px-4 py-2 text-left text-sm hover:bg-gray-100"
                     >
                       Français
@@ -188,7 +189,7 @@ export default function Navbar() {
           )}
         </div>
 
-        {/* Mobile Toggle Button */}
+        {/* Mobile Button */}
         <button
           className="lg:hidden"
           onClick={() => setMenuOpen(!menuOpen)}
@@ -227,10 +228,11 @@ export default function Navbar() {
                   <Link
                     href={item.href}
                     onClick={() => setMenuOpen(false)}
-                    className={`block py-2 ${pathname === item.href
-                      ? "text-orange-500 font-semibold"
-                      : ""
-                      }`}
+                    className={`block py-2 ${
+                      pathname === item.href
+                        ? "text-orange-500 font-semibold"
+                        : ""
+                    }`}
                   >
                     {item.label}
                   </Link>
@@ -249,14 +251,16 @@ export default function Navbar() {
                       />
                       <span className="font-medium">{userData.name}</span>
                     </div>
-
-                    <Link href="/dashboard">
+                    <Link href={profileLink}>
                       <span className="text-sm text-gray-700">Dashboard</span>
                     </Link>
-                    <Link href="/allJobs">
-                      <span className="text-sm text-gray-700">All Jobs</span>
+                    <Link href={jobsLink}>
+                      <span className="text-sm text-gray-700">{jobsLabel}</span>
                     </Link>
-                    <button className="text-sm text-red-500 text-left">
+                    <button
+                      className="text-sm text-red-500 text-left"
+                      onClick={handleLogout}
+                    >
                       Logout
                     </button>
                   </div>
