@@ -78,10 +78,10 @@ export default function Dashboard() {
                 Edit my profiles
               </button>
                 </Link>
-              <button className="w-full flex items-center justify-center py-2 px-4 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors">
+              {/* <button className="w-full flex items-center justify-center py-2 px-4 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors">
                 <Eye className="w-4 h-4 mr-2" />
                 View my public profile
-              </button>
+              </button> */}
          <div>
                        <Link href={'/saveProfile'}>
               <button className="w-full flex items-center justify-center py-2 px-4 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors">
@@ -163,9 +163,11 @@ export default function Dashboard() {
 
             {/* Right: View Button */}
             <div className="w-1/3 text-right">
+              <Link href={'/totalJobPost'}>
               <button className="bg-blue-100 text-blue-600 px-4 py-1 rounded-full font-medium">
                 View
               </button>
+              </Link>
             </div>
           </div>
         ))}
