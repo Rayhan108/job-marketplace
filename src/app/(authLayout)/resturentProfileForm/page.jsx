@@ -1,12 +1,14 @@
 'use client';
+import { useRouter } from 'next/navigation';
 import React from 'react';
 import { useForm } from 'react-hook-form';
 
 const RestaurantProfileForm = () => {
   const { register, handleSubmit, formState: { errors } } = useForm();
-
+const router = useRouter()
   const onSubmit = (data) => {
     console.log('Submitted restaurant profile:', data);
+    router.push('/resturentDashboard')
     // Add API logic here
   };
 

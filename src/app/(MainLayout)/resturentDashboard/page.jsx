@@ -3,6 +3,7 @@
 import DashboardCard from "@/app/component/dashboard/DashboardCard"
 import { Users, Eye, Lock, User, Pencil, Bookmark, Briefcase, BadgeCheck, Award } from "lucide-react"
 import { dashboardStats } from "../dashboard/page"
+import Link from "next/link";
 
 export default function Dashboard() {
     const jobs = [
@@ -28,7 +29,7 @@ export default function Dashboard() {
   },
 ];
   return (
-    <div className="min-h-screen bg-gray-100 p-4 md:p-8 lg:p-12">
+    <div className="min-h-screen bg-gray-100 p-4 md:p-8 lg:p-12 font-poppins">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="mb-8">
@@ -71,10 +72,12 @@ export default function Dashboard() {
             </div>
 
             <div className="space-y-3">
+                <Link href={'/resturentProfile'}>
               <button className="w-full flex items-center justify-center py-2 px-4 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors">
                 <Pencil className="w-4 h-4 mr-2" />
                 Edit my profiles
               </button>
+                </Link>
               <button className="w-full flex items-center justify-center py-2 px-4 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors">
                 <Eye className="w-4 h-4 mr-2" />
                 View my public profile
