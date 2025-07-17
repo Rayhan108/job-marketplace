@@ -26,7 +26,7 @@ export default function Navbar() {
     { label: "Find Profiles", href: "/jobProfile" },
     { label: "Job Offers", href: "/allJobs" },
     ...(role === "owner"
-     ?  [{ label: "Post an Offer", href: "/postOffer" },] :""
+     ?  [{ label: "Post an Offer", href: "/jobPost" },] :""
    
   )];
 

@@ -77,9 +77,9 @@ export default function ChefProfilePage() {
   return (
     <div className="min-h-screen bg-[#f9fafa] px-4 py-8 md:px-8 font-poppins">
       <div className="max-w-7xl mx-auto">
-        <Link href="/jobProfile" className="flex items-center text-sm text-gray-600 mb-6">
+        {/* <Link href="/jobProfile" className="flex items-center text-sm text-gray-600 mb-6">
           <ArrowLeft className="mr-2 h-4 w-4" /> Chef Profile
-        </Link>
+        </Link> */}
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           <div className="lg:col-span-2 space-y-6">

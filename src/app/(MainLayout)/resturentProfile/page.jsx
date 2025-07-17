@@ -41,7 +41,7 @@ export default function ProfilePage() {
 
       {/* Profile Info Section */}
       <div className="flex items-center justify-between ">
-<div className="flex items-center px-4 sm:px-6 md:px-8 pb-6 pt-4 relative z-10">
+<div className="flex items-center px-1 sm:px-6 md:px-8 pb-6 pt-4 relative z-10">
             {/* Profile Image with Verified Badge */}
         <div className="relative -mt-12 sm:-mt-16">
           <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden border-4  ">
@@ -73,7 +73,7 @@ export default function ProfilePage() {
 </div>
 <div >
     <Link href={'/editOwnerProfile'}>
-    <button className="text-[#305DEC] flex items-center justify-center font-bold gap-1">Edit Profile <FaEdit className="text-[#305DEC] w-12"/></button>
+    <button className="text-[#305DEC] flex items-center justify-center font-bold gap-1">Edit Profile <FaEdit className="text-[#305DEC] w-8"/></button>
     </Link>
 </div>
       </div>

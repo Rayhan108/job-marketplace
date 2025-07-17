@@ -82,10 +82,14 @@ export default function Dashboard() {
                 <Eye className="w-4 h-4 mr-2" />
                 View my public profile
               </button>
+         <div>
+                       <Link href={'/saveProfile'}>
               <button className="w-full flex items-center justify-center py-2 px-4 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors">
                 <Bookmark className="w-4 h-4 mr-2" />
                 View Saved profile
               </button>
+                    </Link>
+         </div>
             </div>
           </div>
 
@@ -108,9 +112,11 @@ export default function Dashboard() {
           </p>
           <p className="text-sm text-gray-500 mt-1">The King&apos;s Table</p>
         </div>
+               <Link href={'/jobDetails'}>
         <button className="bg-blue-100 text-blue-600 text-sm px-4 py-1 rounded-full font-medium">
           View
         </button>
+               </Link>
       </div>
 
       {/* Middle Row: Applied Count */}
