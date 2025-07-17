@@ -120,10 +120,10 @@ export default function Navbar() {
               </div>
 
               {/* Notification Icon */}
-              <Link href="/notificationPage">
+              <Link href="/notification">
                 <div
                   className={`p-2 border border-gray-400 rounded-full hover:bg-gray-100 cursor-pointer ${
-                    pathname === "/notificationPage"
+                    pathname === "/notification"
                       ? "bg-orange-500 text-white"
                       : ""
                   }`}
