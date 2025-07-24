@@ -32,7 +32,7 @@ export default function Stats() {
               <div className="flex justify-center mb-4">
                 <stat.icon className={`w-12 h-12 md:w-16 md:h-16 ${stat.iconColor}`} strokeWidth={1.5} />
               </div>
-              <div className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-2">{stat.number}</div>
+              <div className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-2">{stat.number}</div>
               <div className="text-sm md:text-base text-gray-600 font-medium">{stat.description}</div>
             </div>
           ))}

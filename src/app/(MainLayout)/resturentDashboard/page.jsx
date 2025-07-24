@@ -121,9 +121,11 @@ export default function Dashboard() {
 
       {/* Middle Row: Applied Count */}
       <div>
+        <Link href="/totalJobPost">
         <span className="inline-block bg-orange-500 text-white text-sm px-3 py-1 rounded-md font-medium">
           Total Applied 02
         </span>
+        </Link>
       </div>
 
       {/* Bottom Row: Deadline */}

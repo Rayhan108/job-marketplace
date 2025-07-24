@@ -12,7 +12,7 @@ import BestProfile from "@/app/component/allJobs/BestProfile"
 import Link from "next/link"
 const { Option } = Select
 
-const sampleCandidates = Array.from({ length: 12 }, (_, index) => ({
+const sampleCandidates = Array.from({ length: 24 }, (_, index) => ({
   id: index + 1,
   name: "Amina Benali",
   position: "Chef",
@@ -31,7 +31,7 @@ export default function JobDashboardPage() {
   const [job, setJob] = useState(null)
   const [specialty, setSpecialty] = useState(null)
 
-  const candidatesPerPage = 6
+  const candidatesPerPage = 12
 
   const filteredCandidates = sampleCandidates.filter((candidate) => {
     const matchesSearch =

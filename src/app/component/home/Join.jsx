@@ -4,7 +4,7 @@ export default function Join() {
   return (
     <section className="bg-orange-500 py-16 md:py-24 text-white text-center px-4 font-poppins">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">Ready To Join The CookKonnect Community?</h2>
+        <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4">Ready To Join The CookKonnect Community?</h2>
         <p className="text-base md:text-lg mb-8 max-w-2xl mx-auto">
           Whether You Are A Chef Looking For Opportunities Or A Restaurant Seeking Talent, Get Started Today.
         </p>

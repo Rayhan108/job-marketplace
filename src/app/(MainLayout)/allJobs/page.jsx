@@ -260,7 +260,7 @@ export default function JobDashboardPage() {
             </div>
 
             {filterOpen && (
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-end mt-4">
+              <div className="grid grid-cols-1 md:grid-cols-4 gap-4 items-end mt-4">
                 <div>
                   <label className="text-sm font-medium text-gray-700">City</label>
                   <Select
@@ -272,6 +272,19 @@ export default function JobDashboardPage() {
                   >
                     <Option value="Casablanca">Casablanca</Option>
                     <Option value="Marrakech">Marrakech</Option>
+                  </Select>
+                </div>
+                <div>
+                  <label className="text-sm font-medium text-gray-700">Accommodation</label>
+                  <Select
+                    className="w-full"
+                    placeholder="Select your city"
+                    value={city}
+                    onChange={(value) => setCity(value)}
+                    allowClear
+                  >
+                    <Option value="withAccommodations">With Accommodations</Option>
+                    <Option value="withoutAccommondation">Without Accommodations</Option>
                   </Select>
                 </div>
                 <div>

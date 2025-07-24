@@ -24,8 +24,11 @@ export default function JobCard({ job }) {
             <Briefcase className="ml-4 mr-1 h-4 w-4" />
             <span>{job.experience}</span>
           </div>
-          <span className="inline-block mt-3 bg-green-100 text-green-700 text-xs font-medium px-2 py-1 rounded">
+          <span className="inline-block mt-3 bg-green-100 text-green-700 text-xs font-medium px-2 py-1 rounded mr-3">
             Chef
+          </span>
+          <span className="inline-block mt-3 bg-green-100 text-green-700 text-xs font-medium px-2 py-1 rounded">
+            With Accommondation
           </span>
         </div>
 
@@ -60,7 +63,7 @@ export default function JobCard({ job }) {
         <Link href={`/allJobs/${job?.id}`}>
         
         <button className="bg-orange-500  text-white px-6 py-2 rounded-md text-sm font-medium">
-          Apply Now
+        View Details
         </button>
         </Link>
       </div>

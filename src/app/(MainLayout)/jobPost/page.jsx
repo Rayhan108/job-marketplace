@@ -36,7 +36,7 @@ export default function JobDetailsForm() {
       jobDescription: '',
       jobBenefits: '',
       offerVisibility: 'public',
-      applicationDeadline: '2050-12-31',
+      applicationDeadline:new Date().toISOString().split('T')[0],
     },
   });
 
@@ -283,6 +283,7 @@ export default function JobDetailsForm() {
             <div className="relative">
               <input
                 type="date"
+                defaultValue={new Date().toISOString().split('T')[0]}
                 {...register('applicationDeadline')}
                 className="w-full px-4 py-2 border rounded-lg pr-10"
               />

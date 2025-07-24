@@ -15,7 +15,7 @@ const Banner = () => {
   return (
     <div className="bg-[#E8EFE3] flex items-center justify-center px-4 py-16 font-poppins">
       <div className="max-w-7xl mx-auto text-center">
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 mb-6 leading-tight">
+        <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-800 mb-6 leading-tight">
           Connect Chefs with <span className="text-[#679046]">Restaurants</span>
         </h1>
 
@@ -25,7 +25,7 @@ const Banner = () => {
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <Link href="/jobProfile">
-            <button className="bg-[#679046] hover:bg-green-700 text-white font-semibold px-6 py-3 rounded-lg flex items-center gap-2 transition-colors duration-200 w-full sm:w-auto">
+            <button className="bg-[#679046] hover:bg-green-700 text-white text-sm font-semibold px-6 py-3 rounded-lg flex items-center gap-2 transition-colors duration-200 w-full sm:w-auto">
               Discover Profiles
               <FaSearch className="w-5 h-5" />
             </button>
@@ -33,7 +33,7 @@ const Banner = () => {
 
           <button
             onClick={showModal}
-            className="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-6 py-3 rounded-lg flex items-center gap-2 transition-colors duration-200 w-full sm:w-auto"
+            className="bg-orange-500 hover:bg-orange-600 text-white text-sm font-semibold px-6 py-3 rounded-lg flex items-center gap-2 transition-colors duration-200 w-full sm:w-auto"
           >
             Get Started Now
             <MdArrowOutward className="w-5 h-5" />
@@ -44,8 +44,8 @@ const Banner = () => {
       {/* Ant Design Modal */}
       <Modal
         title={<div className="text-center flex flex-col justify-center items-center font-bold text-xl">
-          <ChefHat size={24} className='w-12 text-[#E87B35] ' />
-          <h1 className='text-center font-bold text-xl'>Join CookConnekt</h1>
+          <ChefHat size={24} className='w-12 text-[#E87B35]' />
+          <h1 className='text-center font-bold text-lg'>Join CookConnekt</h1>
         </div>}
         open={isModalOpen}
         footer={null}
