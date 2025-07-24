@@ -3,12 +3,12 @@
 import { useState } from "react"
 import { Search, SlidersHorizontal, Bookmark, Award, Eye } from "lucide-react"
 import { Input, Select } from "antd"
-import Pagination from "@/app/component/allJobs/Pagination"
+import Pagination from "../../component/allJobs/pagination"
 import Image from "next/image"
 import { TiLocationOutline } from "react-icons/ti"
 import { CiStar } from "react-icons/ci"
 import chef from '../../../assets/Ellipse 3.png'
-import BestProfile from "@/app/component/allJobs/BestProfile"
+import BestProfile from "../../component/allJobs/BestProfile"
 import Link from "next/link"
 const { Option } = Select
 

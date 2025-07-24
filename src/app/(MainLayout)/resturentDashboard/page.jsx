@@ -1,6 +1,6 @@
 "use client"
 
-import DashboardCard from "@/app/component/dashboard/DashboardCard"
+import DashboardCard from "../../component/dashboard/DashboardCard"
 import { Users, Eye, Lock, User, Pencil, Bookmark, Briefcase, BadgeCheck, Award } from "lucide-react"
 import { dashboardStats } from "../dashboard/page"
 import Link from "next/link";

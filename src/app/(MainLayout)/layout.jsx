@@ -1,7 +1,7 @@
 // "use client";
 
 import Footer from "../../app/component/shared/Footer";
-import Navbar from "@/app/component/shared/Navbar";
+import Navbar from "../../app/component/shared/Navbar";
 
 
 const MainLayout = ({

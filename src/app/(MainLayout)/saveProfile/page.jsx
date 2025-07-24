@@ -1,6 +1,6 @@
 'use client';
 
-import Pagination from '@/app/component/allJobs/Pagination';
+import Pagination from '../../component/allJobs/pagination';
 import { ArrowLeft, Award, Bookmark, Eye } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';

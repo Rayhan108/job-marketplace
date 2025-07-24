@@ -3,8 +3,8 @@
 import { Card, Progress, Button } from "antd"
 import { User, Pencil, Eye, Search, Lock, Users, Briefcase, Award } from "lucide-react"
 
-import DashboardCard from "@/app/component/dashboard/DashboardCard"
-import ApplicationCard from "@/app/component/dashboard/ApplicationCard"
+import DashboardCard from "../../component/dashboard/DashboardCard"
+import ApplicationCard from "../../component/dashboard/ApplicationCard"
 import Link from "next/link"
 
 export const dashboardStats = [

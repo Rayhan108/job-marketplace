@@ -3,9 +3,9 @@
 import { useState } from "react"
 import { Search, SlidersHorizontal } from "lucide-react"
 import { Input, Select } from "antd"
-import Pagination from "@/app/component/allJobs/Pagination"
-import JobCard from "@/app/component/allJobs/JobCard"
-import JobOffersBanner from "@/app/component/allJobs/JobOffersBanner"
+import Pagination from "../../component/allJobs/pagination"
+import JobCard from "../../component/allJobs/JobCard"
+import JobOffersBanner from "../../component/allJobs/JobOffersBanner"
 
 const { Option } = Select
 

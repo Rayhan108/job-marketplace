@@ -2,7 +2,7 @@
 
 import { useForm } from 'react-hook-form';
 import { Mail, Phone } from 'lucide-react';
-import ContactUsBanner from '@/app/component/Banner/ContactUsBanner';
+import ContactUsBanner from '../../component/Banner/ContactUsBanner';
 
 export default function ContactForm() {
   const { register, handleSubmit, reset } = useForm();

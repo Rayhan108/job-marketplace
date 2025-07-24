@@ -1,5 +1,5 @@
 const { default: Image } = require("next/image");
-import AboutUsBanner from '@/app/component/Banner/AboutUsBanner';
+import AboutUsBanner from '../../component/Banner/AboutUsBanner';
 import chefImg from '../../../assets/chefImage.png'
 
 
