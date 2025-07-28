@@ -2,6 +2,7 @@ import { DM_Sans, Urbanist, Inter, Poppins } from "next/font/google";
 import "../app/globals.css";
 
 import { AntdRegistry } from "@ant-design/nextjs-registry";
+import Providers from "../Provider/Providers";
 
 // Import fonts
 const dmSans = DM_Sans({ weight: ["300", "400", "500", "700"], subsets: ["latin"], variable: "--font-dm-sans" });
@@ -25,9 +26,9 @@ export default function RootLayout({ children }) {
       // bg-[#EAECEE]
         className={`${dmSans.variable} ${urbanist.variable} ${poppins.variable} ${inter.variable} antialiased bg-[#ffffff]`}
       >
-        {/* <Providers> */}
+        <Providers>
         <AntdRegistry>{children}</AntdRegistry>
-        {/* </Providers> */}
+        </Providers>
       </body>
     </html>
   );
